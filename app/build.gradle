@@ -17,24 +17,30 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
-apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-parcelize'
+
+kapt {
+    correctErrorTypes = true
+}
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildFeatures {
         dataBinding true
     }
     defaultConfig {
         applicationId "com.example.android.gdgfinder"
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -90,4 +96,5 @@ dependencies {
 
     // Client for retrieving location
     implementation "com.google.android.gms:play-services-location:$version_play_services"
+
 }

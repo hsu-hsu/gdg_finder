@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATED_ANNOTATION")
+
 package com.example.android.gdgfinder.network
 
 import android.os.Parcelable
